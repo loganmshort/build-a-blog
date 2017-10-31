@@ -4,12 +4,20 @@
     
 
     <hr />
-    <h1>Blog Post</h1>
+    <h1>{{blog.title}}</h1>
     <p>
-        {{blog_post.title}}
-        Body:
-        {{blog_post.body}}
+        {{blog.body}}
     </p>
+    <p>
+        
+        
+        
+        Written by: <a href='/blog?user={{blog.owner_id}}'>{{blog.owner.username}}</a>
+        
+       
+       
+    </p>
+        
                 
 
     <hr />

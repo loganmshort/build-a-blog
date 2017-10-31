@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>All Blogs</h2>
+
+
+
+{% if request.args.get('user') %}
+        {% for blog in blog_posts %}    
+                <a href='/blog?id={{blog.id}}'>{{blog.title}}</a>
+                {% endfor %}
+                <br>
+            Written by: <a href='/blog?user={{user.id}}'>{{user.username}}</a>
+
+        {% elif blog_posts|length == 0 %}
+            <p>No blogs yet</p>
+
+    {% else %}
+            {% for blog in blog_posts %}    
+                <a href='/blog?id={{blog.id}}'>{{blog.title}}</a>
+                <br>
+                {{body}}
+                <br>
+                {% for user in users %}
+                        {% if user.id == blog.owner_id %}
+                                Written by: <a href='/blog?user={{user.id}}'>{{user.username}}</a>
+                        {% endif %}
+                {% endfor %}
+                <br>
+                <br>
+            {% endfor %}    
+        
+    {% endif %}
+
+{% endblock %}

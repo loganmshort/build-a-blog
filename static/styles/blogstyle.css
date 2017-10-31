@@ -7,14 +7,11 @@ body {
     background-color: #4ABDAC;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
-{ font-weight:normal; }
+
 h1 								{ background:#ea2e49; color:#fff; display:inline-block; margin-bottom:1em; padding:0.5em 1em; }
 h2 								{ color:#fff; font-weight:900; /* Heavy */ font-size:6em; letter-spacing:1px; line-height:1em; }
 h3 								{ font-size:2.25em; font-weight:200; /* Thin */ letter-spacing:1px; line-height:1em; padding:0.5em 0 0.25em 0; }
 
-
-    
-}
 
 
 

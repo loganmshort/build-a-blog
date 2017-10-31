@@ -5,9 +5,21 @@
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/blogstyle.css') }}" >
     </head>
 <body>
-    <h1>Build-A-Blog!</h1>
-    <a href= "/newpost") >Add a new blog post!</a>
-    <a href= "/") >Blog Listings</a>
+
+    <div style='float: right'>
+        <a href= "/newpost") >Add a new blog post!</a>
+        <a href= "/") >Bloggers</a>
+        <a href='/blog'>Your Blogs</a> 
+        <a href='/logout'>Log out</a>
+    </div>
+    {% with messages = get_flashed_messages() %}
+        <ul>
+        {% for message in messages %}
+            <li>{{message}}
+        {% endfor %}
+        </ul>
+
+    {% endwith %}
 
     {% block content %}
     {% endblock %}

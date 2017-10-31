@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<html>
+    <head>
+            <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/blogstyle.css') }}" >
+    </head>
+    <body>
+        <h2>Create your account here</h2>
+        <form method='post' name='signup' action='signup'>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            <label for='username'>Username</label>
+                        </td>
+                        <td>
+                            <input name='username' type='text' value={{username}}>
+                            <span class='error'>{{username_error}}</span>                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for='password' type='password'>Password</label>
+                        </td>
+                        <td>
+                            <input name='password' type='password' value ={{password}}>
+                            <span class='error'>{{password_error}}</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for='verify' type='password'>Verify Password</label>
+                        </td>
+                        <td>
+                            <input name='verify' type='password' value={{verify}}>
+                            <span class='error'>{{verify_error}}</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <input type='submit' value='Sign up!'>
+        </form>
+    </body>
+
+    
+{% endblock %}
